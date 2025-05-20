@@ -18,13 +18,13 @@ for (const folder of commandFolders) {
   }
 }
 
-const rest = new REST({ version: '10' }).setToken(process.env.MTM2OTEwODUyMzM1MDIyOTAwMg.GtSkAW.YFVBlOUJyd9AtR8BUViBcf_-6MgtH64ZDgp41A);
+const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
 
 (async () => {
   try {
     console.log(`🛠️ Started refreshing ${commands.length} application (/) commands.`);
     await rest.put(
-      Routes.applicationGuildCommands(process.env.1369108523350229002, process.env.nh7wt3nYN4B6mda0kedLDE7sY569nsHy),
+      Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
       { body: commands }
     );
     console.log('✅ Successfully reloaded application (/) commands.');
